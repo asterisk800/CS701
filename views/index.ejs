@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en>
+<% include header.ejs%>
+<body ng-app="btnApp">
+  <div class="container">
+    <% include nav.ejs%>
+    <div class="jambotron">
+      <h1><%= title %></h1>
+    </div>
+    <div ng-controller="LocationController">
+        <h4>Current Location:</h4>
+        <p>
+          Latitude:  {{currentPosition.coords.latitude}}
+        </p>
+        <p>
+          Longitude: {{currentPosition.coords.longitude}}
+        </p>
+
+        <button id="currentPosition" ng-click="getCurrentPosition()">Get Current Position</button>
+        <button ng-click="getNearBy()">Get Nearby Stops</button>
+
+        <div ng-view=""></div>
+
+        <div id="map" style="height: 350px; width: 100%">
+
+        </div>
+
+
+          <div ng-repeat="stop in nearByList.stop">
+              <near-by stop="stop">
+
+              </near-by>
+          </div>
+
+      <!--Direction page -->
+      <div id="directions-canvas">
+
+      </div>
+
+      <div id="feature_dialog" title="Feature not available">
+
+        This feature is not available!
+
+      </div>
+    </div>
+</div>
+</body>
+</html>

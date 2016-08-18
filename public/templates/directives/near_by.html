@@ -1,0 +1,37 @@
+<a class="panel-warning" href="" ng-click="getPredictionsByStop(stop.stop_id)">Stop ID: {{stop.stop_id}} {{stop.stop_name}}</a>
+<p>Distance: {{stop.distance | number:2}} miles</p>
+<p> Mode: {{routeByStopMode.mode[0].mode_name}}</p>
+<div ng-repeat="route in routeByStopMode.mode[0].route" >
+    <span>Routes{{$index + 1}}: {{route.route_name}}</span>
+</div>
+
+<h1>{{section_title}}</h1>
+<div ng-repeat="alert in predictionsByStop.alert_headers">
+    <a href="">Alert: {{alert.alert_name}}</a> <b></b>
+</div>
+
+<table>
+
+</table>
+<div ng-repeat="mode in predictionsByStop.mode">
+    <a href="">Mode: {{mode.mode_name}}</a> <b></b>
+    <div ng-repeat="route in mode.route">
+        <a href="">Route: {{route.route_name}}</a> <br>
+        <div ng-repeat="direction in route.direction">
+            <a href="">Direction: {{direction.direction_name}}</a><br>
+            <div ng-repeat="trip in direction.trip">
+                <a href="">Trip ID: {{trip.trip_id}}</a> <br>
+                <a href="">Trip Name:{{trip.trip_name}}</a><br>
+                <a href="">Destination: {{trip.trip_headsign}}</a><br>
+                <a href="">Predicted Away: {{trip.pre_away}} seconds</a><br>
+                <a href="">Predicted Time: {{trip.pre_dt | date:'HH:mm:ss'}}</a><br>
+                <a href="">Scheduled Arrival: {{trip.sch_arr_dt | date:'HH:mm:ss'}}</a><br>
+                <a href="">Scheduled Departure {{trip.sch_dep_dt| date:'HH:mm:ss'}}</a><br>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,6 @@
+<a class="panel-warning" href="" ng-click="getPredictionsByStop(stop.stop_id)">Stop ID: {{stop.stop_id}} {{stop.stop_name}}</a>
+<p>Distance: {{stop.distance | number:2}} miles</p>
+<p> Mode: {{routeByStopMode.mode[0].mode_name}}</p>
+<div ng-repeat="route in routeByStopMode.mode[0].route" >
+    <span>Routes{{$index + 1}}: {{route.route_name}}</span>
+</div>

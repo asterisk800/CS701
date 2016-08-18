@@ -1,0 +1,40 @@
+
+<table class="table table-shrink">
+    <thead>
+    <tr>
+        <th>stop_id</th>
+        <th>Stop Name</th>
+        <!--<th>parent_station</th>-->
+        <!--<th>parent_station_name</th>-->
+        <!--<th>stop_lat</th>-->
+        <!--<th>stop_lon</th>-->
+        <th>Time</th>
+        <th>distance</th>
+    </tr>
+    </thead>
+
+
+    <div ng-repeat="stop in nearByList.stop">
+        <near-by stop="stop">
+
+        </near-by>
+    </div>
+
+
+
+    <div id="map" style="height: 350px; width: 100%">
+
+    </div>
+
+    <!--Direction page -->
+    <div id="directions-canvas">
+
+    </div>
+
+    <div id="feature_dialog" title="Feature not available">
+
+        This feature is not available!
+
+    </div>
+    </div>
+    </div>
